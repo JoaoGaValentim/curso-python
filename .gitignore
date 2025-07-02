@@ -3,3 +3,4 @@ venv
 __pycache__
 *.db
 PDFs
+.DS_Store
