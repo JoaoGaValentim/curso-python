@@ -1,0 +1,12 @@
+{
+   "first_name": "João Gabriel Valentim",
+   "last_name": "Theodoro",
+   "age": 24,
+   "languages": [
+      "Java",
+      "Python",
+      "C++"
+   ],
+   "points": null,
+   "is_developer": true
+}
