@@ -33,7 +33,7 @@ def show_todo(todo=None):
 
 
 def app():
-    commands = ("fazer", "listar", "refazer")
+    commands = ("fazer", "listar", "refazer", "quit")
     is_running = True
     result = []
     done = []
@@ -42,6 +42,10 @@ def app():
         print("comandos:", *commands)
         command = input("digite uma tarefa ou comando: ")
         command = command.split()
+        if command[0] not in commands:
+            print("Tarefa adicionada")
+            command = " ".join(command)
+            result = add_todo_task(command, todo)
         if command[0] == "listar":
             show_todo(todo)
         if command[0] == "fazer":
@@ -56,10 +60,6 @@ def app():
                 print(f"Refazendo {todo_task}")
                 done.remove(todo_task)
                 todo.append(todo_task)
-        if command[0] not in commands:
-            print("Tarefa adicionada")
-            command = " ".join(command)
-            result = add_todo_task(command, todo)
         if command[0] == "quit":
             is_running = False
 
